@@ -1,12 +1,9 @@
-# Hackathon ideas
+# Political Synthesis
 
-## Our Major™ Ideas
 - Synthesizing political information on certain elections so that people can see policy → voter turnout
 - https://ssir.org/articles/entry/increasing_voter_turnout_what_if_anything_can_be_done
     - how do you make it easy to access this thing?
-        - digest, fb, website
-        - a website could be cool
-            - github.io
+        - website
     - how to implement:
         - based on area (to determine local candidates etc.)
             - how do you automate finding which candidates are running in a certain election
@@ -59,37 +56,5 @@
 - Sexual Orientation + Gender Identity
 - Religion
 - Renewable Energy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Education
-- Curriculum Deviser
-    - How can you tell if a problem is hard?
-- Diagnosing schools or school districts
-- How do we get good teachers to go to underserved schools?
-    - Hiring international teachers?
-- Teacher performance measured by student improvement over the year(s) OR in comparison to projected outcome of student
-    - Systematic / automated way of computing teacher performance well
-
-
-# Urban Innovation
-
-Environmental
-Transport
-Homeless Support!
-
-# Assistive Tech
 
 
