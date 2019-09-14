@@ -22,10 +22,6 @@ def index(request):
 		form = LocationForm()
 	return HttpResponse(template.render({'form':form}, request))
 
-
-def location_selection(request):
-    return HttpResponse("input zip and state")
-
 def candidate_list(request):
     return HttpResponse("list of candidates")
 
