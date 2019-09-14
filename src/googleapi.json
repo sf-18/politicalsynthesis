@@ -1,0 +1,14 @@
+{
+  "type": "service_account",
+  "project_id": "causal-block-252915",
+  "private_key_id": "8b6e73b6ef29dd4361aab6feb22f722dbe4f5be4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC5UHvuUa1TpITv\nIQjA0m7hwj4MG31PdfqUKq6U8bgn8XgsvoogOhpALYz1PigS+5htE6fPInHkzgK8\nbtLczKXI0NLZk0S6F8OCO3MYnNGSWU6f/KceD2XHgJXY7rqtU75TtsXOZaMOSid1\nkWD4RXj1kNULHpYo6VEd3B3iK+jH+ehPaQkf1afZVNTVN4HnghOJDj0zOrza1+N4\nBSYbpScvbROc13M5+IwctuS31UlJYFYfNDRIEjNOv3I938RlqedEFgcDVp4EKRhn\nf03XFZ07aqmSylUCd2Y+EErhIvGk1+XHyySSJJ7gCb2a2wnDRiiyhmUAsiW53Bdo\nXiGT2c1jAgMBAAECggEAV5VAXWxg3M0+vr4AIxHRsgVZyeMcIHgEDA74IBD2Fnq7\nb3pGUeDkEzz0B9xumDos2jCV+QGwjpEHHgPKyOw31mdLn+VIcCNXFa//P7yuF9r5\nnAeO/FgOpHGTYMnDlLOlmm8hoeDLZa+KYrho+i3rczQWXIECOye6XMBxpzlVdV1L\nhogs1yH33N9nTMUphl9aCrnmp8HQE2WHzizNCSxAKq8RI6FsoRAYt9EiKagKyQyO\nBD7bTCJkk1cbJgrhsNfWr5uAs2Fp/2b0Lfx2C1pk7MGvhCf8nmL7uNX3sWN26PV7\ndd+qADc7LTucshPqbKF8dg5cGO8v24SCutIq2HztkQKBgQDf10YihC8P9237FoIZ\nYrW+YcL8b6jVu9IWOKqwe5aoXjVGvN/UpzH701EDKENU1D4qfMH3iXSeRY9vMvxX\ne8k/G05zQf8mYutyJsZDMOcUqM3aiCG0rg36GBn7vqhaIZMudEmSO5vz1Pbp4eoE\nuXwN4QP75rpm9zz8xP01PchuVwKBgQDT8DqtFuALFutlF2NiTqv2pp/9p64SQSTR\nkHHKMWCwHlYzTjN9KYXu43mq7DPYlDcfJdX/47Yfk3JxH29WZuoQ+wXkh68hiO8R\nvVZOxVIWUwy27PmVcy1q7TNiERzhf101yTT5Ab3ItfQ/ROVYaTfFsVXT8MwmJkcc\n5E0OkHyZ1QKBgQCOHXZ46aWbpINePD8jcOlk01rhvN7bvGC5HQc5/216vj1jCP2v\nXOu+L78qmwCMtig1/3mC+PFin1Vey2cs//mYqHSZdthQ/dLwaa/M7xp3omj4CyAj\nP7K+C1lL3RO0DccNYmVng5MTLy4I9hcHIuChSzClWSsVvnkpHsSIbg54BwKBgGib\n/ppI3DUdDvtK3Ac+Bass+3NcPJNODDpULZY7YRoNH0cbplZ1FGKhbQBsrfqMzdhV\n+JbhcpeLU8V6Wp4vFgFjpbjzMAJBcJ808VDYHHhgbbospdSakSRiCCazg6naD8vo\nkHkH3wEernw8KWfGJ30w1shR5rI92oPsPAygTKAxAoGBANcon2W3hSS9fDkSFLJF\nA/+kaQVRDzTh0ju5tXTR9ZBw1eBZyVFM3IDY8vnz7V7MAcKNfJQlv2CLInaJTnMS\n7cvXlK2BzYFYPBR0lNErr65T8L7fvvaqcD2BKWlWO45T3J8/5aqhv0S3XXXYz7Fm\nuhgn+B0RUg3dcPmmDk4+HXLH\n-----END PRIVATE KEY-----\n",
+  "client_email": "politicalsynthesis@causal-block-252915.iam.gserviceaccount.com",
+  "client_id": "111034707012439863874",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/politicalsynthesis%40causal-block-252915.iam.gserviceaccount.com"
+  "google_api_key": "AIzaSyCsRymKJGWpS1_LNhUUOf7X0VRK2rZU1uE"
+  "google_news_api_key" : "68da1e6f1eaa4da9be2407e90d08a51f"
+}
