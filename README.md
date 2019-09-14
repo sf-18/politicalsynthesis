@@ -30,7 +30,7 @@
                 - Extractive
                     - extracts objects without modifying them
 
-
+## Topics
 - Abortion
 - Affirmative Action
 - Budget/Taxation
