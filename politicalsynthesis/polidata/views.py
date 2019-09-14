@@ -15,6 +15,14 @@ def index(request):
     	form = LocationForm()
     return HttpResponse("Hello")
 
+from django.template import loader
+
+def index(request):
+    template = loader.get_template('polidata/index.html')
+    context = {"state" : "state_name"}
+    return HttpResponse(template.render(context, request))
+
+
 def location_selection(request):
     return HttpResponse("input zip and state")
 
