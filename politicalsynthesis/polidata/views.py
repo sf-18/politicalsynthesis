@@ -12,3 +12,6 @@ def location_selection(request):
 
 def candidate_list(request):
     return HttpResponse("list of candidates")
+
+def candidate_page(request):
+    return HttpResponse("you be viewing candidate page")
