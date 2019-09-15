@@ -12,6 +12,10 @@ from django.template import loader
 
 from .candidate_query import get_candidates
 
+import urllib2
+import simplejson
+import cStringIO
+
 #default location is Boston, MA
 location = {'zip': 'zip_code', 'state': 'state'}
 race = ['']
@@ -40,6 +44,8 @@ def elections(request):
 		form = RaceForm() 
 	context = {'form': form}
 	return HttpResponse(template.render(context, request))
+
+
 def candidate_list(request):
 	template = loader.get_template('polidata/listofcandidates.html')
 	print("Current state:", location['state'], "Current zip:", int(location['zip']), "Current race:", race[0])
@@ -57,3 +63,16 @@ def candidate_page(request, candidate_name):
 	template = loader.get_template('polidata/polisycards.html')
 	context = {'candidate': candidate_name}
 	return HttpResponse(template.render(context,request))
+
+
+def get_image(candidate_name):
+	fetcher = urllib2.build_opener()
+	startIndex = 0
+	searchUrl = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + candidate_name + "&start=" + startIndex
+	f = fetcher.open(searchUrl)
+	deserialized_output = simplejson.load(f)
+
+	imageUrl = deserialized_output['responseData']['results'][0]['unescapedUrl']
+	file = cStringIO.StringIO(urllib.urlopen(imageUrl).read())
+	ge
+	return file 

@@ -4,6 +4,12 @@ import pandas as pd
 import importlib
 from pyopenfec.pyopenfec import Candidate
 
+import urllib2
+import simplejson
+import cStringIO
+
+
+
 #Candidate.fetch returns generator with Candidate dictionaries (hold election information, name, party)
 os.environ["OPENFEC_API_KEY"] = "SwKdYJaLQBdcL459r5MNiBJtLqZqChZ8bUNuEW7Q"
 

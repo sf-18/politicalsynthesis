@@ -37,18 +37,21 @@ def get_content(link):
 	return text
 
 keywords = ['healthcare','immigration', 'taxes', 'guns', 'climate change',
-			'economy', 'abortion', 'marriage', 'criminal justice', 'education',
-			'defense', 'drugs', 'foreign policy', 'religion']
+			'economy', 'abortion', 'gender and marriage equality', 'criminal justice', 'education',
+			'defense', 'drugs', 'foreign policy', 'death penalty', 'defense']
 
 # TODO - expanded keywords with nltk synsets
 
 avoid = ['linkedin', 'twitter', 'facebook', 'wikipedia']
 
-def get_candidate_content(candidate_name):
+def get_candidate_content(candidate_name, topic):
 	texts = []
-	for keyword in keywords:
-		urls = generate_urls(candidate_name, keyword, 25)
-		for url in urls:
-			if not any(site in url for site in avoid):
-				texts.append(get_content(url))			
+	urls = generate_urls(candidate_name, topic, 25)
+	for url in urls:
+		if not any(site in url for site in avoid):
+			texts.append(get_content(url))
 	return texts
+
+if __name__ == "__main__":
+	print("here")
+	print(get_candidate_content('donald trump', 'abortion'))
