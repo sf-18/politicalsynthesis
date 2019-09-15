@@ -14,6 +14,11 @@ from .candidate_query import get_candidates
 
 from .summaries import get_candidate_topic_summary
 
+from google_images_download import google_images_download
+response = google_images_download.googleimagesdownload()
+
+
+
 location = {'zip': 'zip_code', 'state': 'state'}
 race = ['']
 
@@ -29,7 +34,7 @@ def index(request):
 	else:
 		form = LocationForm()
 	return HttpResponse(template.render({'form':form}, request))
-	
+
 def elections(request):
 	template = loader.get_template('polidata/listof.html')
 	if request.method == 'POST':
@@ -42,7 +47,6 @@ def elections(request):
 		form = RaceForm() 
 	context = {'form': form}
 	return HttpResponse(template.render(context, request))
-
 
 def candidate_list(request):
 	template = loader.get_template('polidata/listofcandidates.html')
@@ -68,5 +72,10 @@ def candidate_page(request, candidate_name):
 		issues[issue] = get_candidate_topic_summary(candidate_name,issue)
 	context = {'candidate': candidate_name, 'issues':issues, 'candidate_first_last':candidate_first_last}
 	return HttpResponse(template.render(context,request))
+
+def get_candidate_image(candidate_name):
+	arguments = {"keywords": candidate_name, "limit":1,"print_urls":True}
+	paths = response.download(arguments)
+	return paths
 
 
