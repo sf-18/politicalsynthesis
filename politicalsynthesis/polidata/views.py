@@ -12,7 +12,6 @@ from django.template import loader
 
 from .candidate_query import get_candidates
 
-#default location is Boston, MA
 location = {'zip': 'zip_code', 'state': 'state'}
 race = ['']
 
@@ -55,5 +54,8 @@ def candidate_list(request):
 
 def candidate_page(request, candidate_name):
 	template = loader.get_template('polidata/polisycards.html')
-	context = {'candidate': candidate_name, 'candidate_first_last':candidate_name[candidate_name.index(',')+2:].lower().capitalize()+' '+candidate_name[:candidate_name.index(',')].lower().capitalize()}
+	issues = {'abortion':'test','aa':'test','budget':'test','environment':'test','crime':'test',
+	'finance':'test','death':'test','defense':'test','education':'test','russia':'test','nk':'test',
+	'china':'test','saudi':'test','guns':'test','gender':'test','health':'test','immigration':'test'}
+	context = {'candidate': candidate_name, 'candidate_first_last':candidate_name[candidate_name.index(',')+2:].lower().capitalize()+' '+candidate_name[:candidate_name.index(',')].lower().capitalize(), 'issues':issues}
 	return HttpResponse(template.render(context,request))
