@@ -1,0 +1,27 @@
+#main
+{
+	font-family: Raleway;
+	text-align: center;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-left: 25%;
+	padding-right: 25%;
+}
+
+#title
+{
+	font-size: 500%;
+	color: #17252a;;
+	padding-bottom: 5%;
+}
+
+.election-selection
+{
+	text-align: center;
+	padding: 5%;
+	margin-top: 4%;
+	border-style: solid;
+	border-color: #3aafa9;
+	color: #17252a;
+	border-radius: 40px;
+}
