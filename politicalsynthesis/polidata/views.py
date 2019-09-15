@@ -55,5 +55,5 @@ def candidate_list(request):
 
 def candidate_page(request, candidate_name):
 	template = loader.get_template('polidata/polisycards.html')
-	context = {'candidate': candidate_name}
+	context = {'candidate': candidate_name, 'candidate_first_last':candidate_name[candidate_name.index(',')+2:].lower().capitalize()+' '+candidate_name[:candidate_name.index(',')].lower().capitalize()}
 	return HttpResponse(template.render(context,request))
