@@ -14,7 +14,7 @@ from .candidate_query import get_candidates
 
 #default location is Boston, MA
 location = {'zip': 'zip_code', 'state': 'state'}
-race = ''
+race = ['']
 
 def index(request):
 	template = loader.get_template('polidata/polisyfront.html')
@@ -33,26 +33,24 @@ def elections(request):
 	if request.method == 'POST':
 		form = RaceForm(request.POST)
 		if form.is_valid():
-			if form.cleaned_data['race'] == 'P':
-				race = 'P'
-			elif form.cleaned_data['race'] == 'H':
-				race = 'H'
-			else:
-				race = 'S'
+			race[0] = form.cleaned_data['race']
 			print(race)
 			return HttpResponseRedirect('/polidata/candidate_list')
 	else:
 		form = RaceForm() 
-	context = {'races':['H', 'S', 'P'], 'form': form}
+	context = {'form': form}
 	return HttpResponse(template.render(context, request))
 def candidate_list(request):
 	template = loader.get_template('polidata/listofcandidates.html')
-	print("Current state:", location['state'], "Current zip:", int(location['zip']))
-	candidates = get_candidates(location['state'], int(location['zip']), race)
+	print("Current state:", location['state'], "Current zip:", int(location['zip']), "Current race:", race[0])
+	candidates = get_candidates(location['state'], int(location['zip']), race[0])
 	print(candidates)
+	cand = []
 	for candidate in candidates:
+		cand.append(str(candidate.name))
 		print(candidate.name)
-	context = {'candidates': candidates}
+	context = {'cand': cand}
+	print(cand)
 	return HttpResponse(template.render(context, request))
 
 def candidate_page(request):
