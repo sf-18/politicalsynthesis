@@ -12,14 +12,8 @@ from django.template import loader
 
 from .candidate_query import get_candidates
 
-<<<<<<< HEAD
-import urllib2
-import simplejson
-import cStringIO
+from .summaries import get_candidate_topic_summary
 
-#default location is Boston, MA
-=======
->>>>>>> e43049f1625f4e56e86a44ea012019dc5613ab9f
 location = {'zip': 'zip_code', 'state': 'state'}
 race = ['']
 
@@ -35,6 +29,7 @@ def index(request):
 	else:
 		form = LocationForm()
 	return HttpResponse(template.render({'form':form}, request))
+	
 def elections(request):
 	template = loader.get_template('polidata/listof.html')
 	if request.method == 'POST':
@@ -64,26 +59,13 @@ def candidate_list(request):
 
 def candidate_page(request, candidate_name):
 	template = loader.get_template('polidata/polisycards.html')
-<<<<<<< HEAD
-	context = {'candidate': candidate_name}
+	issues = {'Abortion':'','Affirmative_Action':'',}
+	#'Budget':'','Environment':'','Crime':'',
+	#'Finance':'','Death_Penalty':'','Defense':'','Education':'','Russia':'','North_Korea':'',
+	#'China':'','Saudi_Arabia':'','Guns':'','Gender_Equality':'','Healthcare':'','Immigration':''}
+	for issue in issues:
+		issues[issue] = get_candidate_topic_summary(candidate_name,issue)
+	context = {'candidate': candidate_name, 'issues':issues}
 	return HttpResponse(template.render(context,request))
 
 
-def get_image(candidate_name):
-	fetcher = urllib2.build_opener()
-	startIndex = 0
-	searchUrl = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + candidate_name + "&start=" + startIndex
-	f = fetcher.open(searchUrl)
-	deserialized_output = simplejson.load(f)
-
-	imageUrl = deserialized_output['responseData']['results'][0]['unescapedUrl']
-	file = cStringIO.StringIO(urllib.urlopen(imageUrl).read())
-	ge
-	return file 
-=======
-	issues = {'abortion':'test','aa':'test','budget':'test','environment':'test','crime':'test',
-	'finance':'test','death':'test','defense':'test','education':'test','russia':'test','nk':'test',
-	'china':'test','saudi':'test','guns':'test','gender':'test','health':'test','immigration':'test'}
-	context = {'candidate': candidate_name, 'candidate_first_last':candidate_name[candidate_name.index(',')+2:].lower().capitalize()+' '+candidate_name[:candidate_name.index(',')].lower().capitalize(), 'issues':issues}
-	return HttpResponse(template.render(context,request))
->>>>>>> e43049f1625f4e56e86a44ea012019dc5613ab9f
