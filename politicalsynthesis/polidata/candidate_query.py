@@ -2,7 +2,7 @@ import os
 import datetime
 import pandas as pd
 import importlib
-from pyopenfec.pyopenfec.candidate import Candidate
+from pyopenfec import Candidate
 
 #Candidate.fetch returns generator with Candidate dictionaries (hold election information, name, party)
 os.environ["OPENFEC_API_KEY"] = "SwKdYJaLQBdcL459r5MNiBJtLqZqChZ8bUNuEW7Q"

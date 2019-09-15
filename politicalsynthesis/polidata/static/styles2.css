@@ -1,0 +1,93 @@
+#main
+{
+	font-family: Raleway;
+	background-color: #17252a;
+	margin: 5%;
+	text-align: center;
+	border-radius: 12%;
+	padding-top: 5%;
+}
+
+#candidate-photo
+{
+	display: inline-block;
+	border-radius: 50%;
+	object-fit: cover;
+	width: 300px;
+	height: 300px;
+}
+
+#whois
+{	
+	padding-top: 5%;
+	font-size: 550%;
+	color: #3aafa9;
+}
+
+.candidate
+{
+	color: white;
+}
+
+#candidate-info
+{
+	width: auto;
+	padding-right: 35%;
+	padding-left: 35%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	color: white;
+}
+
+#issues-section
+{
+	align-content: center;
+	text-align: center;
+	font-family: Raleway;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #3aafa9;
+	border-radius: 40px;
+}
+
+#issues
+{	
+	text-align: center;
+	padding: 5%;
+	font-size: 550%;
+	color: #17252a;
+	margin-bottom: 4%;
+}
+
+#cards
+{
+	background-color: white;
+	font-family: Raleway;
+	text-align: center;
+	border-radius: 10%;
+}
+
+.card-row
+{	
+	text-align: center;
+}
+
+.info-card
+{
+	margin: 1%;	
+	padding-top: 8%;
+	padding-bottom: 8%;
+	color: white;
+	border-style: solid;
+	background-color: #17252a;
+	border-color: #17252a;
+	text-align: center;
+	width: 27%;
+	display: inline-block;
+	border-radius: 15px;
+}
+
+.info-details
+{
+	visibility: hidden;
+}
