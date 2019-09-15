@@ -53,5 +53,7 @@ def candidate_list(request):
 	print(cand)
 	return HttpResponse(template.render(context, request))
 
-def candidate_page(request):
-    return HttpResponse("you be viewing candidate page")
+def candidate_page(request, candidate_name):
+	template = loader.get_template('polidata/polisycards.html')
+	context = {'candidate': candidate_name}
+	return HttpResponse(template.render(context,request))
