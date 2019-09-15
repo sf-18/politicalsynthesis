@@ -11,4 +11,4 @@ tensorboardX==1.8
 torch==1.1.0
 urllib3==1.24.2
 google
--e https://github.com/nlpyang/PreSumm.git
+-e git+https://github.com/sf-18/PreSumm.git#egg=PreSumm
