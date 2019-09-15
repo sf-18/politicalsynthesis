@@ -137,7 +137,7 @@ class SumBasic(object):
 		return summary
 
 def get_candidate_topic_summary(candidate, topic):
-	text = get_candidate_content('jeb bush', 'abortion')
+	text = get_candidate_content(candidate, topic)
 	sb = SumBasic("simplified", text)
 	sb.import_docs()
 	sb.preprocess()
