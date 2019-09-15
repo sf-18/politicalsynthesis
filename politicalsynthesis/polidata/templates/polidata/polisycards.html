@@ -26,7 +26,7 @@
 				</div>
 			</h1>
 			<div id="candidate-info">
-				{{ candidate }}
+				<h1>{{ candidate }}</h1>
 				<br />
 				Here is their wikipedia: <a href="https://www.wikipedia.com/wiki/{{ candidate_first_last }}"> {{ candidate }} </a>
 			</div>
@@ -38,9 +38,10 @@
 		</h1>
 	</div>
 	<div class="card-row">
-		{% for issue in issues %}
+		{% for key,value in issues.items %}
 		<div class="info-card">
-			{{ issue }}
+			<h2>{{ key }}</h2>
+			{{ value }}
 		</div>
 		{% endfor %}
 	</div>

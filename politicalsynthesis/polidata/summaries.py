@@ -6,7 +6,7 @@ import glob
 import string
 import random
 
-from search_topics import get_candidate_content
+from .search_topics import get_candidate_content
 
 class SumBasic(object):
 
@@ -15,6 +15,133 @@ class SumBasic(object):
 		self.text_files = text_files
 		self.full_text_str = ""
 		self.pre_text = []
+		self.stopwords='''i
+me
+my
+myself
+we
+our
+ours
+ourselves
+you
+your
+yours
+yourself
+yourselves
+he
+him
+his
+himself
+she
+her
+hers
+herself
+it
+its
+itself
+they
+them
+their
+theirs
+themselves
+what
+which
+who
+whom
+this
+that
+these
+those
+am
+is
+are
+was
+were
+be
+been
+being
+have
+has
+had
+having
+do
+does
+did
+doing
+a
+an
+the
+and
+but
+if
+or
+because
+as
+until
+while
+of
+at
+by
+for
+with
+about
+against
+between
+into
+through
+during
+before
+after
+above
+below
+to
+from
+up
+down
+in
+out
+on
+off
+over
+under
+again
+further
+then
+once
+here
+there
+when
+where
+why
+how
+all
+any
+both
+each
+few
+more
+most
+other
+some
+such
+no
+nor
+not
+only
+own
+same
+so
+than
+too
+very
+s
+t
+can
+will
+just
+don
+should
+now'''
 
 	def import_docs(self):
 		for tf in self.text_files:
@@ -41,7 +168,7 @@ class SumBasic(object):
 			tokens = sen.split()
 			for t in tokens:
 				if any(char.isalpha() or char.isdigit() for char in t):
-					if t.lower() not in nltk.corpus.stopwords.words('english'):
+					if t.lower() not in self.stopwords:
 						if t.lower() in word_freqs:
 							word_freqs[t.lower()] += 1
 						else:

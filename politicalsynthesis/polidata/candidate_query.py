@@ -4,9 +4,6 @@ import pandas as pd
 import importlib
 from pyopenfec.pyopenfec import Candidate
 
-import urllib2
-import simplejson
-import cStringIO
 
 
 

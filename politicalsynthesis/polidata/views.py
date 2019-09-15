@@ -63,13 +63,14 @@ def candidate_list(request):
 
 def candidate_page(request, candidate_name):
 	template = loader.get_template('polidata/polisycards.html')
-	issues = {'Abortion':'','Affirmative_Action':'',}
+	issues = {'Abortion':'','Defense':'',}
 	candidate_first_last = candidate_name[candidate_name.index(',')+2:].lower().capitalize()+' '+candidate_name[:candidate_name.index(',')].lower().capitalize()
 	#'Budget':'','Environment':'','Crime':'',
 	#'Finance':'','Death_Penalty':'','Defense':'','Education':'','Russia':'','North_Korea':'',
 	#'China':'','Saudi_Arabia':'','Guns':'','Gender_Equality':'','Healthcare':'','Immigration':''}
 	for issue in issues:
 		issues[issue] = get_candidate_topic_summary(candidate_name,issue)
+	#pic_path = get_candidate_image(candidate_name)
 	context = {'candidate': candidate_name, 'issues':issues, 'candidate_first_last':candidate_first_last}
 	return HttpResponse(template.render(context,request))
 
