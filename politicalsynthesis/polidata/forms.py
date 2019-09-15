@@ -8,3 +8,7 @@ class LocationForm(forms.Form):
 	, ['WV','WV'], ['WI','WI'], ['WY','WY']]
 	zip_code = forms.CharField(label='Zip Code', max_length=15)
 	state = forms.ChoiceField(choices=states)
+
+class RaceForm(forms.Form):
+	positions = [['P', 'President'],['H', 'Representative'], ['S', 'Senate']]
+	race = forms.ChoiceField(choices=positions)

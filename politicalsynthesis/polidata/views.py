@@ -6,14 +6,15 @@ from django.http import HttpResponse
 
 from django.http import HttpResponse, HttpResponseRedirect
 
-from .forms import LocationForm
+from .forms import LocationForm, RaceForm
 
 from django.template import loader
 
 #from .candidate_query import get_candidates
 
 #default location is Boston, MA
-location = {'zip': '02215', 'state': 'MA'}
+location = {'zip': 'zip_code', 'state': 'state'}
+race = ''
 
 def index(request):
 	template = loader.get_template('polidata/polisyfront.html')
@@ -27,10 +28,23 @@ def index(request):
 		form = LocationForm()
 	return HttpResponse(template.render({'form':form}, request))
 def elections(request):
-	context = {'races':['H', 'S', 'P']}
-	return HttpResponse("Electtions")
+	template = loader.get_template('polidata/listof.html')
+	if request.method == 'POST':
+		form = RaceForm(request.POST)
+		if form.is_valid():
+			if form.cleaned_data['race'] == 'P':
+				race = 'P'
+			elif form.cleaned_data['race'] == 'H':
+				race = 'H'
+			else:
+				race = 'S'
+			return HttpResponseRedirect('/polidata/candidate_list')
+	else:
+		form = RaceForm() 
+	context = {'races':['H', 'S', 'P'], 'form': form}
+	return HttpResponse(template.render(context, request))
 def candidate_list(request):
-	return HttpRespone("Hello")
+	return HttpResponse("Hello")
     #return HttpResponse(get_candidates(location['state'], int(location['zip']), 'H'))
 
 def candidate_page(request):

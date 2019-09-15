@@ -17,23 +17,19 @@
 		<h1 id="title">
 			Choose your election
 		</h1>
+		<form method="post">
+			{% csrf_token %}
+			{{ form }}
+			<input class=button type="submit" value="Submit">
+		</form>
 			<div class="election-selection">
-				some election
+				President
 			</div>
 			<div class="election-selection">
-				some election
+				Representative
 			</div>
 			<div class="election-selection">
-				some election
-			</div>
-			<div class="election-selection">
-				some election
-			</div>
-			<div class="election-selection">
-				some election
-			</div>
-			<div class="election-selection">
-				some election
+				Senate
 			</div>
 	</div>
 </body>

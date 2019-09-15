@@ -19,7 +19,20 @@
 				PoliSy
 			</div>
 		</h1>
-		<div id="location-form">
+		<div id="location-form" style="color:black">
+			<form method="post">
+				{% csrf_token %}
+				{% for field in form %}
+				<div class="location_inputs" style="padding:5%">
+					<div style="color:#3aafa9">
+					{{ field.label_tag }}
+				</div>
+					{{ field }}
+				</div>
+				{% endfor %}
+			<input type="submit" value="Submit" class="button">
+		</form>
+			<!--
 			<form method="post">
 				<tr id="location-inputs">			
 					<span>
@@ -31,6 +44,7 @@
 					</span>
 				</tr>
 			</form>
+			-->
 		</div>
 	</div>
 	<div id="main2">
