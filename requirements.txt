@@ -1,5 +1,5 @@
 beautifulsoup4==4.7.1
-distributed==2.1.0
+distributed==2021.10.0
 multiprocess==0.70.8
 pandas==0.24.2
 pyrouge==0.1.3
